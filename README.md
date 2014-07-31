@@ -8,8 +8,9 @@ jce语法高亮
 ## vundle
 .vimrc 下加入以下的语句
     Bundle 'tenghui0425/jce-highlight'  
-    augroup filetype  
+    augroup jcefile  
         au! BufRead,BufNewFile *.jce setfiletype jce  
+        au! BufRead,BufNewFile *.jce set syntax=jce  
     augroup end  
 
 ## 不使用vundle
