@@ -11,13 +11,14 @@ endif
 syn case match
 
 syn keyword jceTodo contained TODO todo Todo
-syn keyword jceInclude      #include
 syn keyword jceStructure    module struct enum interface
 syn keyword jceType         void bool byte short int double float long string vector map unsigned key
 syn keyword jceBool         true false
 syn keyword jceOption       require optional
 syn keyword jceParamOption  out
 
+setlocal iskeyword+=#
+syn keyword jceInclude      #include
 syn match jceUnderline      "_"
 
 hi def link jceTodo         Todo
