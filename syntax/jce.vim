@@ -20,7 +20,6 @@ syn keyword jceStatement    const key routekey
 
 setlocal iskeyword+=#
 syn keyword jceInclude      #include
-syn match jceUnderline      "_"
 
 "integer number, or floating point number without a dot and with "f".  syn case ignore
 syn match	jceNumbers	display transparent "\<\d\|\.\d" contains=jceNumber,jceFloat,jceOctalError,jceOctal
@@ -51,7 +50,6 @@ hi def link jceOption       Repeat
 hi def link jceType         Type
 hi def link jceBool         Boolean
 hi def link jceLabel        Type
-hi def link jceUnderline    Error
 hi def link jceStatement    Statement
 hi def link jceNumbers      Number
 hi def link jceNumbersCom   Number
