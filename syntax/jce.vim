@@ -18,9 +18,6 @@ syn keyword jceOption       require optional
 syn keyword jceLabel        out
 syn keyword jceStatement    const key routekey
 
-setlocal iskeyword+=#
-syn keyword jceInclude      #include
-
 "integer number, or floating point number without a dot and with "f".  syn case ignore
 syn match	jceNumbers	display transparent "\<\d\|\.\d" contains=jceNumber,jceFloat,jceOctalError,jceOctal
 " Same, but without octal error (for comments)
@@ -42,6 +39,10 @@ syn match	jceFloat		display contained "\d\+e[-+]\=\d\+[fl]\=\>"
 " comment
 syn region jceCommentL	start="//" skip="\\$" end="$" keepend 
 syn region jceComment	matchgroup=cCommentStart start="/\*" end="\*/" 
+
+syn region	jceIncluded	display contained start=+"+ skip=+\\\\\|\\"+ end=+"+
+syn match	jceIncluded	display contained "<[^>]*>"
+syn match	jceInclude	display "^\s*\(%:\|#\)\s*include\>\s*["<]" contains=jceIncluded
 
 hi def link jceTodo         Todo
 hi def link jceInclude      Include
