@@ -10,7 +10,9 @@ endif
 
 syn case match
 
-syn keyword jceTodo contained TODO todo Todo
+syn keyword jceTodo         TODO todo Todo contained 
+syn keyword jceBug          BUG bug Bug ERROR error Error contained
+syn cluster jceState        contains=jceTodo,jceBug
 syn keyword jceStructure    module struct enum interface
 syn keyword jceType         void bool byte short int double float long string vector map unsigned
 syn keyword jceBool         true false
@@ -37,14 +39,15 @@ syn match	jceFloat		display contained "\.\d\+\(e[-+]\=\d\+\)\=[fl]\=\>"
 syn match	jceFloat		display contained "\d\+e[-+]\=\d\+[fl]\=\>"
 
 " comment
-syn region jceCommentL	start="//" skip="\\$" end="$" keepend 
-syn region jceComment	matchgroup=cCommentStart start="/\*" end="\*/" 
+syn region jceCommentL	start="//" skip="\\$" end="$" keepend contains=@jceState
+syn region jceComment   start=/\/\*/ end=/\*\// contains=@jceState
 
 syn region	jceIncluded	display contained start=+"+ skip=+\\\\\|\\"+ end=+"+
 syn match	jceIncluded	display contained "<[^>]*>"
 syn match	jceInclude	display "^\s*\(%:\|#\)\s*include\>\s*["<]" contains=jceIncluded
 
 hi def link jceTodo         Todo
+hi def link jceBug          Error
 hi def link jceInclude      Include
 hi def link jceStructure    Structure
 hi def link jceOption       Repeat
