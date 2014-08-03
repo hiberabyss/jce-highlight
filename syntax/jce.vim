@@ -46,6 +46,8 @@ syn region	jceIncluded	display contained start=+"+ skip=+\\\\\|\\"+ end=+"+
 syn match	jceIncluded	display contained "<[^>]*>"
 syn match	jceInclude	display "^\s*\(%:\|#\)\s*include\>\s*["<]" contains=jceIncluded
 
+syn region  jceString   start=/"/ skip=/\\"/ end=/"/
+
 hi def link jceTodo         Todo
 hi def link jceBug          Error
 hi def link jceInclude      Include
@@ -63,5 +65,6 @@ hi def link jceOctalZero    Error
 hi def link jceFloat        Float
 hi def link jceComment      Comment
 hi def link jceCommentL     Comment
+hi def link jceString       String
 
 let b:current_syntax="jce"
