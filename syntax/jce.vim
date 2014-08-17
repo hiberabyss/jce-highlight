@@ -68,3 +68,4 @@ hi def link jceCommentL     Comment
 hi def link jceString       String
 
 let b:current_syntax="jce"
+
