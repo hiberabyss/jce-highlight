@@ -42,6 +42,7 @@ syn match	jceFloat		display contained "\.\d\+\(e[-+]\=\d\+\)\=[fl]\=\>"
 "floating point number, without dot, with exponent
 syn match	jceFloat		display contained "\d\+e[-+]\=\d\+[fl]\=\>"
 
+syn region  jceBlock    start="{" end="}" transparent fold
 " comment
 syn region jceCommentL	start="//" skip="\\$" end="$" keepend contains=@jceState
 syn region jceComment   start=/\/\*/ end=/\*\// contains=@jceState
@@ -74,6 +75,8 @@ hi link jceCpp03Keyword     Error
 hi link jceCpp11Keyword     Error
 hi link jceC99Keyword       Error
 hi link jceC11Keyword       Error
+
+syn sync fromstart
 
 let b:current_syntax="jce"
 
