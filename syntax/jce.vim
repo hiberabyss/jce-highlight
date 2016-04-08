@@ -19,6 +19,10 @@ syn keyword jceBool         true false
 syn keyword jceOption       require optional
 syn keyword jceLabel        out
 syn keyword jceStatement    const key routekey
+syn keyword jceCpp03Keyword asm auto break case catch class const_cast continue default delete do dynamic_cast else explicit export extern for friend goto if inline mutable namespace new operator private protected public register reinterpret_cast return signed sizeof static static_cast switch template this throw try typedef typeid typename union using virtual void volatile wchar_t while
+syn keyword jceCpp11Keyword alignas constexpr char16_t char32_t decltype nullptr noexcept static_assert 
+syn keyword jceC99Keyword   restrict _Bool _Complex _Imaginary
+syn keyword JceC11Keyword   _Alignas _Alignof _Atomic _Static_assert _Noreturn _Thread_local _Generic
 
 "integer number, or floating point number without a dot and with "f".  syn case ignore
 syn match	jceNumbers	display transparent "\<\d\|\.\d" contains=jceNumber,jceFloat,jceOctalError,jceOctal
@@ -66,6 +70,10 @@ hi def link jceFloat        Float
 hi def link jceComment      Comment
 hi def link jceCommentL     Comment
 hi def link jceString       String
+hi link jceCpp03Keyword     Error
+hi link jceCpp11Keyword     Error
+hi link jceC99Keyword       Error
+hi link jceC11Keyword       Error
 
 let b:current_syntax="jce"
 
