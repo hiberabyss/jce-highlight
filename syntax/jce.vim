@@ -10,15 +10,7 @@ endif
 
 syntax case match
 
-syntax keyword jceTodo         TODO todo Todo contained 
-syntax keyword jceBug          BUG bug Bug ERROR error Error contained
-syntax cluster jceState        contains=jceTodo,jceBug
-syntax keyword jceStructure    module struct enum interface
-syntax keyword jceType         void bool byte short int double float long string vector map unsigned
-syntax keyword jceBool         true false
-syntax keyword jceOption       require optional
-syntax keyword jceLabel        out
-syntax keyword jceStatement    const key routekey
+" c/c++ keyword
 syntax keyword jceCpp03Keyword asm auto break case catch class const_cast continue 
 syntax keyword JceCpp03Keyword default delete do dynamic_cast else explicit export 
 syntax keyword JceCpp03Keyword extern for friend goto if inline mutable namespace 
@@ -28,7 +20,26 @@ syntax keyword JceCpp03Keyword static_cast switch template this throw try typede
 syntax keyword JceCpp03Keyword typeid typename union using virtual void volatile wchar_t while
 syntax keyword jceCpp11Keyword alignas constexpr char16_t char32_t decltype nullptr noexcept static_assert 
 syntax keyword jceC99Keyword   restrict _Bool _Complex _Imaginary
-syntax keyword JceC11Keyword   _Alignas _Alignof _Atomic _Static_assert _Noreturn _Thread_local _Generic
+syntax keyword jceC11Keyword   _Alignas _Alignof _Atomic _Static_assert _Noreturn _Thread_local _Generic
+
+" java keyword
+syntax keyword jceJavaKeyword abstract assert boolean break byte case catch char 
+syntax keyword jceJavaKeyword class const continue default do double else enum 
+syntax keyword jceJavaKeyword extends final finally float for goto if implements 
+syntax keyword jceJavaKeyword import instanceof int interface long native new 
+syntax keyword jceJavaKeyword package private protected public return strictfp 
+syntax keyword jceJavaKeyword short static super switch synchronized this throw 
+syntax keyword jceJavaKeyword throws transient try void volatile while
+
+syntax keyword jceTodo         TODO todo Todo contained 
+syntax keyword jceBug          BUG bug Bug ERROR error Error contained
+syntax cluster jceState        contains=jceTodo,jceBug
+syntax keyword jceStructure    module struct enum interface
+syntax keyword jceType         void bool byte short int double float long string vector map unsigned
+syntax keyword jceBool         true false
+syntax keyword jceOption       require optional
+syntax keyword jceLabel        out
+syntax keyword jceStatement    const key routekey
 
 "integer number, or floating point number without a dot and with "f".  syntax case ignore
 syntax match	jceNumbers	display transparent "\<\d\|\.\d" contains=jceNumber,jceFloat,jceOctalError,jceOctal
@@ -81,6 +92,7 @@ highlight link jceCpp03Keyword     Error
 highlight link jceCpp11Keyword     Error
 highlight link jceC99Keyword       Error
 highlight link jceC11Keyword       Error
+highlight link jceJavaKeyword      Error
 
 syntax sync fromstart
 
