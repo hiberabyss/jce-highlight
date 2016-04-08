@@ -53,28 +53,28 @@ syn match	jceInclude	display "^\s*\(%:\|#\)\s*include\>\s*["<]" contains=jceIncl
 
 syn region  jceString   start=/"/ skip=/\\"/ end=/"/
 
-hi def link jceTodo         Todo
-hi def link jceBug          Error
-hi def link jceInclude      Include
-hi def link jceStructure    Structure
-hi def link jceOption       Repeat
-hi def link jceType         Type
-hi def link jceBool         Boolean
-hi def link jceLabel        Type
-hi def link jceStatement    Statement
-hi def link jceNumbers      Number
-hi def link jceNumbersCom   Number
-hi def link jceNumber       Number
-hi def link jceOctal        Number
-hi def link jceOctalZero    Error
-hi def link jceFloat        Float
-hi def link jceComment      Comment
-hi def link jceCommentL     Comment
-hi def link jceString       String
-hi link jceCpp03Keyword     Error
-hi link jceCpp11Keyword     Error
-hi link jceC99Keyword       Error
-hi link jceC11Keyword       Error
+highlight default link jceTodo         Todo
+highlight default link jceBug          Error
+highlight default link jceInclude      Include
+highlight default link jceStructure    Structure
+highlight default link jceOption       Repeat
+highlight default link jceType         Type
+highlight default link jceBool         Boolean
+highlight default link jceLabel        Type
+highlight default link jceStatement    Statement
+highlight default link jceNumbers      Number
+highlight default link jceNumbersCom   Number
+highlight default link jceNumber       Number
+highlight default link jceOctal        Number
+highlight default link jceOctalZero    Error
+highlight default link jceFloat        Float
+highlight default link jceComment      Comment
+highlight default link jceCommentL     Comment
+highlight default link jceString       String
+highlight link jceCpp03Keyword     Error
+highlight link jceCpp11Keyword     Error
+highlight link jceC99Keyword       Error
+highlight link jceC11Keyword       Error
 
 syn sync fromstart
 
