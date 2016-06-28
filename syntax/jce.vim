@@ -4,9 +4,11 @@
 
 if version < 600
     syntax clear
+    finish
 elseif exists("b:current_syntax") 
     finish
 endif
+let b:current_syntax="jce"
 
 syntax case match
 
@@ -35,7 +37,7 @@ syntax keyword jceTodo         TODO todo Todo contained
 syntax keyword jceBug          BUG bug Bug ERROR error Error contained
 syntax cluster jceState        contains=jceTodo,jceBug
 syntax keyword jceStructure    module struct enum interface
-syntax keyword jceType         void bool byte short int double float long string vector map unsigned
+syntax keyword jceType         void bool byte short int double float long string vector map 
 syntax keyword jceBool         true false
 syntax keyword jceOption       require optional
 syntax keyword jceLabel        out
@@ -71,6 +73,9 @@ syntax match	jceInclude	display "^\s*\(%:\|#\)\s*include\>\s*["<]" contains=jceI
 
 syntax region  jceString   start=/"/ skip=/\\"/ end=/"/
 
+syntax match jceError "unsigned"
+syntax match jceType  "unsigned int"
+
 highlight default link jceTodo         Todo
 highlight default link jceBug          Error
 highlight default link jceInclude      Include
@@ -95,8 +100,8 @@ highlight link jceC99Keyword       Error
 highlight link jceC11Keyword       Error
 highlight link jceJavaKeyword      Error
 highlight link jceAbandonType      Error
+highlight link jceError        Error
 
 syntax sync fromstart
 
-let b:current_syntax="jce"
 
