@@ -1,0 +1,6 @@
+--langdef=jce
+--langmap=jce:.jce
+--regex-jce=/^\s*module\s*([a-zA-Z_0-9]+)/\1/m,module/
+--regex-jce=/^\s*struct\s*([a-zA-Z_0-9]+)/\1/s,struct/
+--regex-jce=/^\s*enum\s*([a-zA-Z_0-9]+)/\1/e,enum/
+

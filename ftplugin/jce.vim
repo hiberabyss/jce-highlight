@@ -7,17 +7,24 @@
 " created: 2016-04-14 16:09:11
 "==============================================================
 
-if exists(":Tagbar")
-    let g:tagbar_type_jce = {
-                \ 'ctagstype'   : 'jce',
-                \ 'kinds'       : [
-                \ 'm:module',
-                \ 's:struct',
-                \ 'e:enum',
-                \],
-                \ 'sro'         : '::'
-                \}
+let cwd = expand('<sfile>:p:h:h')
+
+if has("win16") || has("win32") || has("win64") || has("win95")
+    let cnf = fnamemodify(cwd."\\ctags\\jce.cnf", ':p')
+else
+    let cnf = fnamemodify(cwd."/ctags/jce.cnf", ':p')
 endif
+
+let g:tagbar_type_jce = {
+            \ 'ctagstype'   : 'jce',
+            \ 'kinds'       : [
+            \ 'm:module',
+            \ 's:struct',
+            \ 'e:enum',
+            \],
+            \ 'sro'         : '::',
+            \ 'deffile': cnf,
+            \}
 
 function! s:GenJceTag(...)
     let l:pwd = getcwd()
