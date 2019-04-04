@@ -42,7 +42,6 @@ syntax keyword jceBool         true false
 syntax keyword jceOption       require optional
 syntax keyword jceLabel        out
 syntax keyword jceStatement    const key routekey
-syntax keyword jceAbandonType  bool
 
 "integer number, or floating point number without a dot and with "f".  syntax case ignore
 syntax match	jceNumbers	display transparent "\<\d\|\.\d" contains=jceNumber,jceFloat,jceOctalError,jceOctal
@@ -99,7 +98,6 @@ highlight link jceCpp11Keyword     Error
 highlight link jceC99Keyword       Error
 highlight link jceC11Keyword       Error
 highlight link jceJavaKeyword      Error
-highlight link jceAbandonType      Error
 highlight link jceError        Error
 
 syntax sync fromstart
